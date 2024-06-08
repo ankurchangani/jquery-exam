@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="w-2 d-flex">
+                    <div class="logo-bar">
+                        <img src="img/logo/logo-classic-red-background.png" alt="logo">
+
+                    </div>
+                    
+                </div>
+                <div class="toggle w-xll-d-n w-xl-d-n w-l-d-n w-m-b">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                    <div class="w-7 d-flex justify-between">
+                        <div class="navigation w-m-d-n">
+                            <ul>
+                                <li>
+                                    home
+                                </li>
+
+                                <li>
+                                    Pages
+                                </li>
+
+                                <li>
+                                    offer
+                                </li>
+
+                                <li>
+                                    Galleries
+                                </li>
+
+                                <li>
+                                    Blog
+                                </li>
+                                <li>
+                                    Shop
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                <div class="w-3 w-m-d-n">
+                    <div class="icon-bar">
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-x-twitter"></i>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </header>
+
+    <!-- banner -->
+
+    <section class="bc">
+        <div class="container">
+            <div class="row">
+                <div class="w-12">
+                    <div class="food">
+                        <h2 id="changingText">
+                            WORDPRESS<br> THEME</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+
+    <script>
+          $(document).ready(function () {
+            $(".toggle").click(function () {
+                $(".navigation").fadeToggle();0.
+            });
+        });
+    </script>
+    <script>
+        let yourtext = [
+  ["WORDPRESS", "#ffd166"],
+  ["WORDPRESS", "#7DE2D1"],
+  ["ThEMA", "#DE3C4B"]
+];
+
+let x = 0;
+let y = 0;
+//how fast typing is
+let wait = 300;
+//how long you want to text stay before overwriting
+let additionalwait = 5;
+let txt = yourtext[0][0].split("");
+let out = "";
+let retyping = setInterval(function () {
+  document.getElementById("changingText").innerHTML = out;
+  if (x > txt.length - 1) {
+  } else {
+    out += txt[x];
+  }
+  x++;
+  if (x == txt.length + 2 + additionalwait) {
+    if (y == yourtext.length - 1) {
+      y = 0;
+      txt = yourtext[y][0].split("");
+      out = "";
+      document.getElementById("changingText").innerHTML = out;
+      document.getElementById("changingText").style.color = yourtext[y][1];
+      x = 0;
+    } else {
+      y += 1;
+      txt = yourtext[y][0].split("");
+      out = "";
+      document.getElementById("changingText").innerHTML = out;
+      document.getElementById("changingText").style.color = yourtext[y][1];
+      x = 0;
+    }
+  }
+}, wait);
+
+    </script>
+</body>
+
+</html>
